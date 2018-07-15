@@ -9,6 +9,7 @@ var check = 0;
 var plus_minus = 0;
 var clock = 0;
 var point = 0;
+var fixed = 0;
 function clearDisplay() {
 	document.getElementById("result").innerHTML = 0;
 	number1 = 0;
@@ -78,6 +79,7 @@ function caculated() {
 function markOfMath(f) {
 	flag = f; 
 	point = 0;
+	fixed = 0;
 	if (current == 2) {
 		caculated();
 	}
@@ -91,6 +93,7 @@ function markOfMath(f) {
 };
 
 function pressedButton(num) {
+	debugger;
 	temp = buttonNum[num];
 	if (clock == 1 && current == 2) {
 		number2 = 0;
@@ -109,11 +112,15 @@ function pressedButton(num) {
 	} else {
 		if (current == 1) {
 			number1 += temp * point;
+			number1.toFixed(fixed);
+			fixed++;
 			point *= 0.1;
 			showNumber(number1);
 		} else {
 			number2 += temp * point;
+			number2.toFixed(fixed);
 			point *= 0.1;
+			fixed++;
 			showNumber(number2);
 		}
 	}
@@ -131,15 +138,13 @@ function percent() {
 function pressedPointButton() {
 	if (point == 0) {
 		point = 0.1;
+		fixed = 1;
 		if (current == 1) {
 			showNumber(number1 + ".");
 		} else {
 			showNumber(number2 + ".");
 		}
 	}
-
-	
-
 }
 
 // Event Processing

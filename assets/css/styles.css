@@ -46,6 +46,7 @@
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
+
 @media screen and (max-width: 576px) {
 	.container {
 		max-width: 100%;
@@ -64,6 +65,33 @@
 	.button {
 		height: 2em;
 		font-size: 250%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 3%;
+	}
+	
+	.container {
+		max-width: 20%;
+	}
+
+	#display {
+		height: 6em;
+	}
+
+	#result {
+		font-size: 500%;
+		padding-right: 2%;
+	}
+
+	.button {
+		height: 2em;
+		font-size: 200%;
 	}
 }
 
